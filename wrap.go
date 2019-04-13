@@ -52,7 +52,7 @@ func wordWrap(m measureStringer, s string, width float64) []string {
 		}
 	}
 	for i, line := range result {
-		result[i] = strings.TrimSpace(line)
+		result[i] = strings.TrimRightFunc(line, unicode.IsSpace)
 	}
 	return result
 }
